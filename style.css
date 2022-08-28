@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #d0d6df;
+    --bg-primary-offset: #f1f3f7;
+    --bg-secondary: #fff;
+    --text-primary: #3a3c42;
+    --text-primary-offset: #898c94;
+    --orange: #dc9960;
+    --green: #1eb8b1;
+    --purple: #657cc4;
+    --black: var(--text-primary);
+    --red: #d92027;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
+}
+
+.menu-list {
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 8px;
+}
+
+.menu-list+.menu-list {
+    border-top: 1px solid #ddd;
+}
+
+.menu-sub-list {
+    display: none;
+    padding: 8px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
+    position: absolute;
+    left: 100%;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    flex-direction: column;
+}
+
+.menu-sub-list:hover {
+    display: flex;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-button {
+    font-family: inherit;
+    border: 0;
+    padding: 8px;
+    padding-right: 36px;
+    width: 100%;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-secondary);
+}
+
+.menu-button:hover {
+    background-color: var(--bg-primary-offset);
+}
+
+.menu-button:hover svg {
+    stroke: var(--text-primary);
+}
+
+.menu-button:hover+.menu-sub-list {
+    display: flex;
+}
+
+.menu-button svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    stroke: var(--text-primary-offset);
+}
+
+.menu-button svg:nth-of-type(2) {
+    margin-right: 0;
+    position: absolute;
+    right: 8px;
+}
+
+.menu-button-delete:hover {
+    color: var(--red);
+}
+
+.menu-button-delete:hover svg:first-of-type {
+    stroke: var(--red);
+}
+
+.menu-button-orange svg:first-of-type {
+    stroke: var(--orange);
+}
+
+.menu-button-purple svg:first-of-type {
+    stroke: var(--purple);
+}
+
+.menu-button-green svg:first-of-type {
+    stroke: var(--green);
+}
+
+.menu-button-black svg:first-of-type {
+    stroke: var(--black);
+}
+
+.menu-button-checked svg:nth-of-type(2) {
+    stroke: var(--purple);
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
